@@ -73,7 +73,7 @@ main {
 	max-width: 1200px;
 	opacity: 0;
 	transform: translateY(50px);
-	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+	transition: opacity 0.5s ease-out, transform 0.6s ease-out;
 }
 
 .main-background.show {
@@ -101,7 +101,7 @@ main {
 	justify-content: center;
 	min-height: 150px;
 	height: auto; /* Altura adaptable */
-	background-image: linear-gradient(to bottom right, rgba(194, 201, 207, 0.85), rgba(40, 100, 40, 0.85));
+	background-image: linear-gradient(to bottom right, rgba(194, 201, 207, 0.915), rgb(40, 100, 40));
 	font-size: 1rem; /* Ajuste de fuente para evitar colapso */
 }
 
@@ -124,23 +124,6 @@ main {
 .app-section p {
 	font-size: 0.9rem; /* Tamaño de texto reducido para mejor legibilidad en móviles */
 	color: #fff;
-}
-
-/* Colores de las secciones */
-#ventas {
-	background-color: rgba(26, 146, 70, 0.486);
-}
-
-#catalogo {
-	background-color: rgba(3, 169, 244, 0.85);
-}
-
-#recetario {
-	background-color: rgba(255, 193, 7, 0.85);
-}
-
-#ranking {
-	background-color: rgba(220, 53, 69, 0.85);
 }
 
 /* Responsividad */
