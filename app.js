@@ -9,7 +9,7 @@ document.getElementById('start-button').addEventListener('click', function () {
 	setTimeout(() => {
 		document.getElementById('splash-screen').style.display = 'none'; // Ocultar después de la transición
 		document.querySelector('main').style.display = 'flex'; // Mostrar el main
-		document.querySelector('.main-background').classList.add('show'); // Mostrar con animación
+		document.querySelector('.main-background').classList.add('show'                                                                     ); // Mostrar con animación
 	}, 500); // Duración de la transición
 });
 
