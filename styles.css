@@ -40,7 +40,7 @@ body {
 
 /* Estilo del botón en la pantalla de bienvenida */
 #start-button {
-	background-color: rgba(30, 56, 25, 0.904); /* Color de fondo */
+	background-color: rgba(30, 56, 25, 0.715); /* Color de fondo */
 	border: none;
 	border-radius: 10px;
 	color: #fff;
