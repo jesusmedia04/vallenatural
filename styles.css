@@ -40,20 +40,22 @@ body {
 
 /* Estilo del botón en la pantalla de bienvenida */
 #start-button {
-	background-color: rgba(50, 74, 46, 0.887); /* Color de fondo */
+	background-color: rgba(30, 56, 25, 0.904); /* Color de fondo */
 	border: none;
-	border-radius: 5px;
+	border-radius: 10px;
 	color: #fff;
 	font-size: 2.5rem;
 	padding: 15px 30px;
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
-	margin-bottom: 1.5em;
+	margin-bottom: 2.5em;
+	width: 80%;
+	height: 100px;
 }
 
 #start-button:hover {
-	background-color: rgb(211, 250, 53); /* Más brillante al pasar el ratón */
+	background-color: rgb(126, 139, 77); /* Más brillante al pasar el ratón */
 	transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
 }
 
