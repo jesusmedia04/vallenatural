@@ -48,10 +48,10 @@ body {
 	padding: 15px 30px;
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición */
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
+	box-shadow: 0 4px 10px rgba(0, 0, , 10); /* Sombra para el botón */
 	margin-bottom: 2.5em;
-	width: 80%;
-	height: 100px;
+	width: 90%;
+	height: 90px;
 }
 
 #start-button:hover {
