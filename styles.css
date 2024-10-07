@@ -39,7 +39,7 @@ body {
 }
 
 #start-button {
-	background-color: rgba(42, 105, 65, 0.866);
+	background-image: linear-gradient(to bottom right, rgba(194, 201, 207, 0.915), rgb(40, 100, 40));
 	border: none;
 	border-radius: 10px;
 	color: #fff;
