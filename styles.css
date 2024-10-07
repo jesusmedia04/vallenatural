@@ -1,0 +1,117 @@
+/* Mobile-first styles */
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.165)),
+		/* Color semitransparente */ url(./assets/background.jpg); /* Imagen de fondo */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+header {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%; /* Asegura que ocupe el ancho total */
+	height: 80px; /* Ajusta la altura */
+	margin: 2em;
+}
+section > i {
+	font-size: 48px;
+}
+h1 {
+	margin: 0;
+	font-size: 3em; /* Aumenta el tamaño de la fuente */
+}
+main {
+	width: 50vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.button-options {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 2em;
+}
+.icon-large {
+	font-size: 48px;
+	background-color: red;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	background-color: #fff8f88d;
+	border: 1px solid #dddddd97;
+	border-radius: 8px;
+	max-width: 300px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section img {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+section h2 {
+	margin: 10px 0;
+	font-size: 1.5rem;
+}
+
+section button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: #2a662d;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Hover effect on sections */
+section:hover {
+	transform: scale(1.08); /* Slightly grows on hover */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+}
+
+/* Hover effect on buttons */
+section button:hover {
+	background-color: #b3aa00;
+}
+
+/* Media query for larger screens (tablets and up) */
+@media (min-width: 768px) {
+	.button-options {
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	section {
+		flex-basis: 45%; /* Make sections take half of the available space on larger screens */
+		max-width: none;
+	}
+}
+
+/* Media query for even larger screens (desktops) */
+@media (min-width: 1024px) {
+	section {
+		flex-basis: 22%; /* Make sections take about a quarter of the width */
+	}
+}
