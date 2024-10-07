@@ -10,8 +10,10 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	display: flex;
-	justify-content: center;
+	flex-direction: column; /* Para apilar el título y el botón */
+	justify-content: flex-end; /* Para alinear el botón en la parte inferior */
 	align-items: center;
+	padding: 20px; /* Espaciado para el botón */
 	z-index: 1000;
 }
 
@@ -20,6 +22,8 @@ body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
+	background-image: url(./assets/background.jpg);
+	background-size: cover;
 }
 
 /* Opciones generales */
@@ -34,10 +38,20 @@ header {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-	margin: 0;
-	font-size: 3em;
-	color: #333; /* Color del encabezado */
+/* Estilo del botón en la pantalla de bienvenida */
+#start-button {
+	background-color: rgba(255, 193, 7, 0.9); /* Color de fondo amarillo */
+	border: none;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 15px 30px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#start-button:hover {
+	background-color: rgba(255, 193, 7, 1); /* Más brillante al pasar el ratón */
 }
 
 /* Main container */
@@ -51,7 +65,6 @@ main {
 
 /* Fondo del contenedor principal */
 .main-background {
-	background-color: rgba(240, 240, 240, 0.9); /* Fondo del contenedor principal */
 	border-radius: 12px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 	padding: 20px;
@@ -74,8 +87,6 @@ main {
 	text-align: center;
 	color: #fff; /* Color del texto */
 	transition: transform 0.2s, box-shadow 0.3s;
-	background: rgba(60, 162, 60, 0.9); /* Fondo verde */
-	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 	display: flex; /* Para centrar contenido */
 	flex-direction: column; /* Alinear verticalmente */
 	align-items: center; /* Centrar horizontalmente */
@@ -84,9 +95,26 @@ main {
 	height: 200px; /* Altura fija para todas las secciones */
 }
 
+/* Colores específicos para cada sección */
+#ventas {
+	background-color: rgba(60, 162, 60, 0.9); /* Verde */
+}
+
+#catalogo {
+	background-color: rgba(0, 123, 255, 0.9); /* Azul */
+}
+
+#recetario {
+	background-color: rgba(255, 193, 7, 0.9); /* Amarillo */
+}
+
+#ranking {
+	background-color: rgba(220, 53, 69, 0.9); /* Rojo */
+}
+
 /* Iconos */
 .app-section i {
-	font-size: 50px;
+	font-size: 50px; /* Tamaño de icono fijo */
 	margin-bottom: 10px; /* Espaciado entre el icono y el texto */
 }
 
@@ -102,15 +130,6 @@ main {
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Fondo del interfaz */
-.main-background {
-	background: linear-gradient(
-		135deg,
-		rgba(60, 162, 60, 0.5),
-		rgba(255, 255, 255, 0.9)
-	); /* Fondo acorde a los colores */
-}
-
 /* Media Queries */
 @media (min-width: 768px) {
 	.button-options {
@@ -121,18 +140,18 @@ main {
 @media (max-width: 600px) {
 	/* Ajustes para móviles */
 	.button-options {
-		grid-template-columns: 1fr; /* Una columna en móviles */
+		grid-template-columns: repeat(2, 1fr); /* Dos columnas en móviles */
 	}
 
 	.app-section {
-		padding: 20px; /* Menos padding en móviles */
+		padding: 15px; /* Menos padding en móviles */
 	}
 
 	.app-section h2 {
 		font-size: 1.2rem; /* Tamaño de texto más pequeño en móviles */
 	}
 
-	#splash-screen h1 {
-		font-size: 2em; /* Tamaño del texto más pequeño en móviles */
+	.app-section i {
+		font-size: 40px; /* Tamaño de icono más pequeño en móviles */
 	}
 }

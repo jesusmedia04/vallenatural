@@ -12,30 +12,30 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	</head>
 	<body>
-		<!-- Pantalla de bienvenida con la imagen de fondo -->
+		<!-- Pantalla de bienvenida con el logo -->
 		<div id="splash-screen">
-			<h1 style="color: white; text-align: center; font-size: 3em">Bienvenido</h1>
+			<button id="start-button">Iniciemos</button>
+			<!-- Botón de inicio -->
 		</div>
 		<header style="display: none"></header>
 		<main style="display: none">
-			<!-- Fondo para el contenedor principal -->
 			<div class="main-background">
 				<div class="button-options">
-					<a href="ventas.html" class="app-section">
+					<a href="ventas.html" class="app-section" id="ventas" data-section="ventas">
 						<i class="fa fa-rocket"></i>
-						<h2>Técnicas de Ventas</h2>
+						<h2>Ventas</h2>
 					</a>
-					<a href="catalogo.html" class="app-section">
+					<a href="catalogo.html" class="app-section" id="catalogo" data-section="catalogo">
 						<i class="fa-solid fa-book-open"></i>
-						<h2>Catálogo de Productos</h2>
+						<h2>Catálogo</h2>
 					</a>
-					<a href="recetario.html" class="app-section">
+					<a href="recetario.html" class="app-section" id="recetario" data-section="recetario">
 						<i class="fa-solid fa-utensils"></i>
-						<h2>Recetas</h2>
+						<h2>Recetario</h2>
 					</a>
-					<a href="ranking.html" class="app-section">
+					<a href="ranking.html" class="app-section" id="ranking" data-section="ranking">
 						<i class="fa-solid fa-users"></i>
-						<h2>Ranking e incentivos</h2>
+						<h2>Ranking</h2>
 					</a>
 				</div>
 			</div>
@@ -49,11 +49,29 @@
 			});
 
 			// Pantalla de bienvenida (Splash Screen)
-			document.getElementById('splash-screen').addEventListener('click', function () {
-				this.style.display = 'none'; // Ocultar la pantalla de bienvenida
+			document.getElementById('start-button').addEventListener('click', function () {
+				document.getElementById('splash-screen').style.display = 'none'; // Ocultar la pantalla de bienvenida
 				document.querySelector('header').style.display = 'block'; // Mostrar el header
 				document.querySelector('main').style.display = 'flex'; // Mostrar el main
 			});
+
+			// Función para mostrar una sección específica
+			document.querySelectorAll('.button-options a').forEach((section) => {
+				section.addEventListener('click', (event) => {
+					event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+					const target = section.getAttribute('data-section');
+					window.location.href = `${target}.html`; // Suponiendo que cada sección tiene su propia página
+				});
+			});
+
+			// Función para volver a la vista principal (puedes personalizar la lógica según lo necesites)
+			function goBack() {
+				document.querySelectorAll('.content-section').forEach((section) => {
+					section.style.display = 'none';
+					section.classList.remove('fade-in');
+				});
+				document.querySelector('.button-options').style.display = 'grid';
+			}
 		</script>
 	</body>
 </html>
