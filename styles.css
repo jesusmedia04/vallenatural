@@ -1,47 +1,74 @@
-/* Mobile-first styles */
+/* Pantalla de bienvenida (Splash Screen) */
+#splash-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-image: url(./assets/background.jpg); /* Color de fondo con opacidad si no usas imagen */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+#splash-screen h1 {
+	color: white; /* Color del texto */
+	text-align: center;
+	font-size: 3em; /* Tamaño del texto */
+}
+
+/* Estilos Globales */
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family: 'Poppins', sans-serif;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.182)),
-		/* Color semitransparente */ url(./assets/background.jpg); /* Imagen de fondo */
+	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.881)), url(./assets/background.webp); /* Asegúrate de usar una imagen comprimida */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+/* Encabezado */
 header {
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%; /* Asegura que ocupe el ancho total */
-	height: 80px; /* Ajusta la altura */
-	margin: 2em;
+	width: 100%;
+	height: 80px;
+	margin-bottom: 5em;
+	background-color: rgba(0, 0, 0, 0.1);
 }
-section > i {
-	font-size: 50px;
-}
+
 h1 {
 	margin: 0;
-	font-size: 3em; /* Aumenta el tamaño de la fuente */
+	font-size: 3em;
+	color: #ffffff;
 }
+
+/* Contenedor Principal */
 main {
-	width: 80vw;
+	width: 90vw;
+	max-width: 1200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
 }
 
+/* Opciones de Botones */
 .button-options {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 2em;
 }
 
@@ -51,48 +78,74 @@ section {
 	align-items: center;
 	justify-content: center;
 	padding: 40px;
-	background-color: #ffffff8b;
-	border: 1px solid #fcf8f856;
-	border-radius: 8px;
-	max-width: 50px;
+	background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	max-width: 100px;
 }
 
-section img {
-	width: 80px;
-	height: 80px;
-	margin-bottom: 10px;
+section i {
+	font-size: 50px;
+	color: #3ca23c;
 }
 
 section h2 {
 	margin: 10px 0;
 	font-size: 1.5rem;
+	color: #3ca23c;
 }
 
-/* Hover effect on sections */
 section:hover {
-	transform: scale(1.1); /* Slightly grows on hover */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
-	background-color: rgba(60, 162, 60, 0.742);
+	transform: scale(1.1);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	background-color: rgba(60, 162, 60, 0.842);
 }
 
-/* Media query for larger screens (tablets and up) */
+/* Transiciones suaves para las secciones */
+.content-section {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	display: none; /* Ocultar por defecto */
+}
+
+.fade-in {
+	opacity: 1 !important;
+	display: block; /* Mostrar en fade-in */
+}
+
+/* Botón de volver */
+button {
+	padding: 10px 20px;
+	background-color: #3ca23c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #2e8b57;
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
 	.button-options {
-		flex-direction: row;
-		justify-content: space-around;
-		flex-wrap: wrap;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	section {
-		flex-basis: 45%; /* Make sections take half of the available space on larger screens */
-		max-width: none;
+		max-width: none; /* Quitar el límite de ancho en pantallas más grandes */
 	}
 }
 
-/* Media query for even larger screens (desktops) */
 @media (min-width: 1024px) {
 	section {
-		flex-basis: 22%; /* Make sections take about a quarter of the width */
+		flex-basis: 22%; /* Ajustar el tamaño de los botones */
+	}
+
+	h1 {
+		font-size: 3.5em; /* Aumentar el tamaño del título */
 	}
 }
