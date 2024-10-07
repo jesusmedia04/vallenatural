@@ -5,7 +5,7 @@
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	background-image: url(./assets/background.jpg); /* Color de fondo con opacidad si no usas imagen */
+	background-image: url(./assets/background.jpg); /* Fondo de la imagen de inicio */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -15,29 +15,14 @@
 	z-index: 1000;
 }
 
-#splash-screen h1 {
-	color: white; /* Color del texto */
-	text-align: center;
-	font-size: 3em; /* Tamaño del texto */
-}
-
-/* Estilos Globales */
+/* Estilos Generales */
 body {
-	padding: 0;
-	margin: 0;
 	font-family: 'Poppins', sans-serif;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.881)), url(./assets/background.webp); /* Asegúrate de usar una imagen comprimida */
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	margin: 0;
+	padding: 0;
 }
 
-/* Encabezado */
+/* Opciones generales */
 header {
 	text-align: center;
 	display: flex;
@@ -52,100 +37,102 @@ header {
 h1 {
 	margin: 0;
 	font-size: 3em;
-	color: #ffffff;
+	color: #333; /* Color del encabezado */
 }
 
-/* Contenedor Principal */
+/* Main container */
 main {
-	width: 90vw;
-	max-width: 1200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
+	height: calc(100vh - 80px); /* Ajusta el alto considerando el header */
 }
 
-/* Opciones de Botones */
+/* Fondo del contenedor principal */
+.main-background {
+	background-color: rgba(240, 240, 240, 0.9); /* Fondo del contenedor principal */
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	width: 90%; /* Ancho ajustado */
+	max-width: 1200px; /* Ancho máximo */
+}
+
+/* Button Options */
 .button-options {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Secciones flexibles */
 	gap: 2em;
 }
 
-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-	background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+/* Estilos para las secciones */
+.app-section {
+	text-decoration: none; /* Sin subrayado */
 	border-radius: 12px;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	max-width: 100px;
+	padding: 30px;
+	text-align: center;
+	color: #fff; /* Color del texto */
+	transition: transform 0.2s, box-shadow 0.3s;
+	background: rgba(60, 162, 60, 0.9); /* Fondo verde */
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+	display: flex; /* Para centrar contenido */
+	flex-direction: column; /* Alinear verticalmente */
+	align-items: center; /* Centrar horizontalmente */
+	justify-content: center; /* Centrar verticalmente */
+	min-height: 150px; /* Altura mínima para evitar colapso */
+	height: 200px; /* Altura fija para todas las secciones */
 }
 
-section i {
+/* Iconos */
+.app-section i {
 	font-size: 50px;
-	color: #3ca23c;
+	margin-bottom: 10px; /* Espaciado entre el icono y el texto */
 }
 
-section h2 {
+/* Encabezado de las secciones */
+.app-section h2 {
 	margin: 10px 0;
 	font-size: 1.5rem;
-	color: #3ca23c;
 }
 
-section:hover {
-	transform: scale(1.1);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	background-color: rgba(60, 162, 60, 0.842);
+/* Efecto hover para las secciones */
+.app-section:hover {
+	transform: scale(1.05);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Transiciones suaves para las secciones */
-.content-section {
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
-	display: none; /* Ocultar por defecto */
-}
-
-.fade-in {
-	opacity: 1 !important;
-	display: block; /* Mostrar en fade-in */
-}
-
-/* Botón de volver */
-button {
-	padding: 10px 20px;
-	background-color: #3ca23c;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-button:hover {
-	background-color: #2e8b57;
+/* Fondo del interfaz */
+.main-background {
+	background: linear-gradient(
+		135deg,
+		rgba(60, 162, 60, 0.5),
+		rgba(255, 255, 255, 0.9)
+	); /* Fondo acorde a los colores */
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
 	.button-options {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	section {
-		max-width: none; /* Quitar el límite de ancho en pantallas más grandes */
+		grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas medianas */
 	}
 }
 
-@media (min-width: 1024px) {
-	section {
-		flex-basis: 22%; /* Ajustar el tamaño de los botones */
+@media (max-width: 600px) {
+	/* Ajustes para móviles */
+	.button-options {
+		grid-template-columns: 1fr; /* Una columna en móviles */
 	}
 
-	h1 {
-		font-size: 3.5em; /* Aumentar el tamaño del título */
+	.app-section {
+		padding: 20px; /* Menos padding en móviles */
+	}
+
+	.app-section h2 {
+		font-size: 1.2rem; /* Tamaño de texto más pequeño en móviles */
+	}
+
+	#splash-screen h1 {
+		font-size: 2em; /* Tamaño del texto más pequeño en móviles */
 	}
 }
