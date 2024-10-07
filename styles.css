@@ -8,7 +8,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.165)),
+	background: linear-gradient(rgba(231, 201, 201, 0.034), rgba(231, 201, 201, 0.182)),
 		/* Color semitransparente */ url(./assets/background.jpg); /* Imagen de fondo */
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -31,7 +31,7 @@ h1 {
 	font-size: 3em; /* Aumenta el tamaño de la fuente */
 }
 main {
-	width: 50vw;
+	width: 40vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -55,7 +55,7 @@ section {
 	align-items: center;
 	justify-content: center;
 	padding: 40px;
-	background-color: #fff8f88d;
+	background-color: #ffffff2d;
 	border: 1px solid #dddddd97;
 	border-radius: 8px;
 	max-width: 300px;
@@ -71,17 +71,6 @@ section img {
 section h2 {
 	margin: 10px 0;
 	font-size: 1.5rem;
-}
-
-section button {
-	padding: 10px 20px;
-	font-size: 1rem;
-	border: none;
-	border-radius: 5px;
-	background-color: #2a662d;
-	color: white;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
 }
 
 /* Hover effect on sections */
