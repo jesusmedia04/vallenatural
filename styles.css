@@ -20,7 +20,7 @@ body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
-
+	background-image: url(./assets/background\ 2.jpg);
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
@@ -88,19 +88,19 @@ main {
 
 /* Colores específicos para cada sección */
 #ventas {
-	background-color: rgba(60, 162, 60, 0.9); /* Verde */
+	background-color: rgba(60, 162, 60, 0.7); /* Verde */
 }
 
 #catalogo {
-	background-color: rgba(0, 123, 255, 0.9); /* Azul */
+	background-color: rgba(0, 123, 255, 0.7); /* Azul */
 }
 
 #recetario {
-	background-color: rgba(255, 193, 7, 0.9); /* Amarillo */
+	background-color: rgba(255, 193, 7, 0.7); /* Amarillo */
 }
 
 #ranking {
-	background-color: rgba(220, 53, 69, 0.9); /* Rojo */
+	background-color: rgba(220, 53, 69, 0.7); /* Rojo */
 }
 
 /* Iconos */
