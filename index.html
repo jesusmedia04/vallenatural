@@ -63,15 +63,6 @@
 					window.location.href = `${target}.html`; // Suponiendo que cada sección tiene su propia página
 				});
 			});
-
-			// Función para volver a la vista principal (puedes personalizar la lógica según lo necesites)
-			function goBack() {
-				document.querySelectorAll('.content-section').forEach((section) => {
-					section.style.display = 'none';
-					section.classList.remove('fade-in');
-				});
-				document.querySelector('.button-options').style.display = 'grid';
-			}
 		</script>
 	</body>
 </html>
