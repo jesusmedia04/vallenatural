@@ -19,54 +19,38 @@
 				Tu navegador no soporta videos HTML5.
 			</video>
 			<button id="start-button">Bienvenido</button>
-			<!-- Botón de inicio -->
 		</div>
+
 		<header style="display: none"></header>
+
 		<main style="display: none">
 			<div class="main-background">
 				<div class="button-options">
 					<a href="ventas.html" class="app-section" id="ventas" data-section="ventas">
 						<i class="fa fa-rocket"></i>
 						<h2>Ventas</h2>
+						<p>Técnicas y consejos para mejorar tu rendimiento en ventas.</p>
 					</a>
 					<a href="catalogo.html" class="app-section" id="catalogo" data-section="catalogo">
 						<i class="fa-solid fa-book-open"></i>
 						<h2>Catálogo</h2>
+						<p>Explora nuestro catálogo de productos.</p>
 					</a>
 					<a href="recetario.html" class="app-section" id="recetario" data-section="recetario">
 						<i class="fa-solid fa-utensils"></i>
 						<h2>Recetario</h2>
+						<p>Encuentra recetas relacionadas con nuestros productos.</p>
 					</a>
 					<a href="ranking.html" class="app-section" id="ranking" data-section="ranking">
 						<i class="fa-solid fa-users"></i>
 						<h2>Ranking</h2>
+						<p>Consulta el ranking de los mejores vendedores de la semana.</p>
 					</a>
 				</div>
 			</div>
 		</main>
 
 		<!-- JavaScript para la navegación -->
-		<script>
-			// Ocultar todas las secciones al cargar
-			document.querySelectorAll('.content-section').forEach((section) => {
-				section.style.display = 'none';
-			});
-
-			// Pantalla de bienvenida (Splash Screen)
-			document.getElementById('start-button').addEventListener('click', function () {
-				document.getElementById('splash-screen').style.display = 'none'; // Ocultar la pantalla de bienvenida
-				document.querySelector('header').style.display = 'block'; // Mostrar el header
-				document.querySelector('main').style.display = 'flex'; // Mostrar el main
-			});
-
-			// Función para mostrar una sección específica
-			document.querySelectorAll('.button-options a').forEach((section) => {
-				section.addEventListener('click', (event) => {
-					event.preventDefault(); // Evitar el comportamiento por defecto del enlace
-					const target = section.getAttribute('data-section');
-					window.location.href = `${target}.html`; // Suponiendo que cada sección tiene su propia página
-				});
-			});
-		</script>
+		<script src="./app.js"></script>
 	</body>
 </html>

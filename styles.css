@@ -1,32 +1,3 @@
-#splash-screen {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	flex-direction: column; /* Apilar el título y el botón */
-	justify-content: flex-end; /* Centrar verticalmente el contenido */
-	align-items: center;
-	z-index: 1000;
-}
-
-#splash-video {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	object-fit: cover; /* Asegura que el video cubra todo sin deformarse */
-	z-index: -1; /* Pone el video detrás del contenido */
-}
-
-#content {
-	position: relative;
-	z-index: 1; /* Asegura que el contenido esté encima del video */
-	color: white; /* Ajusta el color del texto */
-	text-align: center;
-}
 /* Estilos Generales */
 body {
 	font-family: 'Poppins', sans-serif;
@@ -36,116 +7,167 @@ body {
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
 }
 
-/* Estilo del botón en la pantalla de bienvenida */
+#splash-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	z-index: 1000;
+	transition: opacity 0.5s ease-out;
+}
+
+#splash-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	z-index: -1;
+}
+
 #start-button {
-	background-color: rgba(30, 56, 25, 0.715); /* Color de fondo */
+	background-color: rgba(30, 56, 25, 0.715);
 	border: none;
 	border-radius: 10px;
 	color: #fff;
-	font-size: 2.5rem;
+	font-size: 2rem; /* Tamaño de fuente más pequeño para dispositivos móviles */
 	padding: 15px 30px;
 	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición */
-	box-shadow: 0 4px 10px rgba(0, 0, , 10); /* Sombra para el botón */
+	transition: background-color 0.3s, transform 0.3s;
 	margin-bottom: 2.5em;
-	width: 90%;
-	height: 90px;
+	width: 80%; /* Limitar el ancho del botón */
+	height: 100px; /* Tamaño de botón más pequeño para dispositivos móviles */
 }
 
 #start-button:hover {
-	background-color: rgb(126, 139, 77); /* Más brillante al pasar el ratón */
-	transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
+	background-color: rgb(126, 139, 77);
+	transform: scale(1.05);
 }
 
-/* Main container */
 main {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
-	height: calc(100vh - 80px); /* Ajusta el alto considerando el header */
+	height: calc(100vh - 80px);
 }
 
-/* Fondo del contenedor principal */
 .main-background {
 	border-radius: 12px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 	padding: 20px;
-	width: 90%; /* Ancho ajustado */
-	max-width: 1200px; /* Ancho máximo */
+	width: 90%;
+	max-width: 1200px;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Button Options */
+.main-background.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Secciones como botones */
 .button-options {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Secciones flexibles */
-	gap: 2em;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Se adapta mejor a pantallas pequeñas */
+	gap: 1.5em; /* Espaciado reducido para mejorar en móviles */
 }
 
-/* Estilos para las secciones */
 .app-section {
-	text-decoration: none; /* Sin subrayado */
-	border-radius: 12px;
-	padding: 30px;
+	text-decoration: none;
+	border-radius: 15px;
+	padding: 20px; /* Menos padding para pantallas pequeñas */
 	text-align: center;
-	color: #fff; /* Color del texto */
+	color: #fff;
 	transition: transform 0.2s, box-shadow 0.3s;
-	display: flex; /* Para centrar contenido */
-	flex-direction: column; /* Alinear verticalmente */
-	align-items: center; /* Centrar horizontalmente */
-	justify-content: center; /* Centrar verticalmente */
-	min-height: 150px; /* Altura mínima para evitar colapso */
-	height: 200px; /* Altura fija para todas las secciones */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 150px;
+	height: auto; /* Altura adaptable */
+	background-image: linear-gradient(to bottom right, rgba(194, 201, 207, 0.85), rgba(40, 100, 40, 0.85));
+	font-size: 1rem; /* Ajuste de fuente para evitar colapso */
 }
 
-/* Colores específicos para cada sección */
-#ventas {
-	background-color: rgba(60, 162, 60, 0.7); /* Verde */
-}
-
-#catalogo {
-	background-color: rgba(0, 123, 255, 0.7); /* Azul */
-}
-
-#recetario {
-	background-color: rgba(255, 193, 7, 0.7); /* Amarillo */
-}
-
-#ranking {
-	background-color: rgba(220, 53, 69, 0.7); /* Rojo */
-}
-
-/* Iconos */
-.app-section i {
-	font-size: 50px; /* Tamaño de icono fijo */
-	margin-bottom: 10px; /* Espaciado entre el icono y el texto */
-}
-
-/* Encabezado de las secciones */
-.app-section h2 {
-	margin: 10px 0;
-	font-size: 1.5rem;
-}
-
-/* Efecto hover para las secciones */
 .app-section:hover {
 	transform: scale(1.05);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Media Queries */
+.app-section i {
+	font-size: 40px; /* Ajuste de tamaño de íconos para pantallas pequeñas */
+	margin-bottom: 10px;
+}
+
+.app-section h2 {
+	font-size: 1.3rem; /* Ajuste para pantallas pequeñas */
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.app-section p {
+	font-size: 0.9rem; /* Tamaño de texto reducido para mejor legibilidad en móviles */
+	color: #fff;
+}
+
+/* Colores de las secciones */
+#ventas {
+	background-color: rgba(26, 146, 70, 0.486);
+}
+
+#catalogo {
+	background-color: rgba(3, 169, 244, 0.85);
+}
+
+#recetario {
+	background-color: rgba(255, 193, 7, 0.85);
+}
+
+#ranking {
+	background-color: rgba(220, 53, 69, 0.85);
+}
+
+/* Responsividad */
+/* Media query para pantallas medianas (tablets) */
 @media (min-width: 768px) {
 	.button-options {
-		grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas medianas */
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.app-section i {
+		font-size: 50px; /* Ajuste para pantallas medianas */
+	}
+
+	.app-section h2 {
+		font-size: 1.5rem;
+	}
+
+	.app-section p {
+		font-size: 1rem;
 	}
 }
 
+/* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
-	/* Ajustes para móviles */
 	.button-options {
 		grid-template-columns: repeat(2, 1fr); /* Dos columnas en móviles */
+		gap: 1em; /* Menor espacio entre columnas */
 	}
 
 	.app-section {
@@ -156,7 +178,11 @@ main {
 		font-size: 1.2rem; /* Tamaño de texto más pequeño en móviles */
 	}
 
+	.app-section p {
+		font-size: 0.85rem; /* Tamaño de texto más pequeño para mayor legibilidad */
+	}
+
 	.app-section i {
-		font-size: 40px; /* Tamaño de icono más pequeño en móviles */
+		font-size: 35px; /* Tamaño de icono más pequeño en móviles */
 	}
 }
