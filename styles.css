@@ -7,11 +7,10 @@
 	height: 100vh;
 	background-image: url(./assets/background.jpg); /* Fondo de la imagen de inicio */
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-position: center;
 	display: flex;
 	flex-direction: column; /* Para apilar el título y el botón */
-	justify-content: center; /* Centra verticalmente el contenido */
+	justify-content: flex-end; /* Centra verticalmente el contenido */
 	align-items: center;
 	z-index: 1000;
 }
@@ -21,13 +20,15 @@ body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
-	background-image: url(./assets/background.jpg);
+
 	background-size: cover;
+	background-position: center;
+	height: 100vh;
 }
 
 /* Estilo del botón en la pantalla de bienvenida */
 #start-button {
-	background-color: rgba(62, 128, 53, 0.9); /* Color de fondo */
+	background-color: rgba(59, 79, 56, 0.752); /* Color de fondo */
 	border: none;
 	border-radius: 12px;
 	color: #fff;
@@ -36,6 +37,7 @@ body {
 	cursor: pointer;
 	transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
+	margin-bottom: 1em;
 }
 
 #start-button:hover {
