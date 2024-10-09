@@ -1,23 +1,21 @@
-// Ocultar todas las secciones al cargar
-document.querySelectorAll('.content-section').forEach((section) => {
-	section.style.display = 'none';
-});
+// app.js
 
-// Pantalla de bienvenida (Splash Screen)
-document.getElementById('start-button').addEventListener('click', function () {
-	document.getElementById('splash-screen').style.opacity = '0'; // Desaparecer lentamente
-	setTimeout(() => {
-		document.getElementById('splash-screen').style.display = 'none'; // Ocultar después de la transición
-		document.querySelector('main').style.display = 'flex'; // Mostrar el main
-		document.querySelector('.main-background').classList.add('show'                                                                     ); // Mostrar con animación
-	}, 500); // Duración de la transición
-});
+document.addEventListener('DOMContentLoaded', () => {
+	const splashScreen = document.getElementById('splash-screen');
+	const startButton = document.getElementById('start-button');
+	const main = document.querySelector('main');
 
-// Navegación entre secciones
-document.querySelectorAll('.button-options a').forEach((section) => {
-	section.addEventListener('click', (event) => {
-		event.preventDefault(); // Evitar el comportamiento por defecto del enlace
-		const target = section.getAttribute('data-section');
-		window.location.href = `${target}.html`; // Suponiendo que cada sección tiene su propia página
+	// Evento para el botón de inicio
+	startButton.addEventListener('click', () => {
+		splashScreen.style.display = 'none';
+		main.style.display = 'flex';
 	});
+
+	// Manejo del botón de volver al índice
+	const backButton = document.getElementById('back-button');
+	if (backButton) {
+		backButton.addEventListener('click', () => {
+			window.location.href = 'index.html'; // Redirige al índice
+		});
+	}
 });
