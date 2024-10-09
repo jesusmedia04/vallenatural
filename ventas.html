@@ -3,60 +3,69 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ventas - Recursos</title>
-		<!-- Fuente Google -->
+		<title>Ventas</title>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-		<!-- CSS externo -->
-		<link rel="stylesheet" href="./ventas.css" />
-		<!-- Íconos de FontAwesome -->
+		<link rel="stylesheet" href="./styles.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 	</head>
 	<body>
+		<header>
+			<h1>Recursos de Ventas</h1>
+			<p>Mejora tus habilidades y rendimiento en ventas.</p>
+		</header>
+
 		<main>
-			<section class="intro-section">
-				<h1>Mejora tus Habilidades de Ventas</h1>
-				<p>
-					Encuentra recursos clave, técnicas, y consejos para mejorar tu rendimiento como vendedor. Estas herramientas
-					te ayudarán a alcanzar tus metas y potenciar tus habilidades de negociación.
-				</p>
-			</section>
-
-			<section class="resources-section">
-				<div class="resource-card">
-					<i class="fa fa-chart-line"></i>
-					<h2>Estrategias de Ventas</h2>
-					<p>Descubre las mejores estrategias para aumentar tus conversiones y fidelizar clientes.</p>
-					<a href="#" class="button">Leer más</a>
-				</div>
-
-				<div class="resource-card">
-					<i class="fa fa-headset"></i>
-					<h2>Técnicas de Comunicación</h2>
-					<p>Mejora tus habilidades de comunicación para conectar mejor con los clientes.</p>
-					<a href="#" class="button">Leer más</a>
-				</div>
-
-				<div class="resource-card">
-					<i class="fa fa-handshake"></i>
-					<h2>Negociación Efectiva</h2>
-					<p>Aprende técnicas de negociación que te ayudarán a cerrar más tratos exitosamente.</p>
-					<a href="#" class="button">Leer más</a>
-				</div>
-
-				<div class="resource-card">
-					<i class="fa fa-users"></i>
-					<h2>Psicología del Cliente</h2>
-					<p>Comprende mejor a tus clientes y cómo sus decisiones pueden ser influenciadas.</p>
-					<a href="#" class="button">Leer más</a>
-				</div>
-			</section>
+			<div class="content">
+				<h2>Técnicas de Ventas</h2>
+				<p>Aquí puedes encontrar técnicas efectivas para mejorar tu proceso de ventas.</p>
+				<ul>
+					<li>Escucha activa</li>
+					<li>Construcción de relaciones</li>
+					<li>Presentaciones efectivas</li>
+					<li>Negociación y cierre</li>
+				</ul>
+				<h2>Índice de Secciones</h2>
+				<ul class="section-index">
+					<li><a href="#escucha-activa">Escucha Activa</a></li>
+					<li><a href="#relaciones">Construcción de Relaciones</a></li>
+					<li><a href="#presentaciones">Presentaciones Efectivas</a></li>
+					<li><a href="#negociacion">Negociación y Cierre</a></li>
+				</ul>
+				<section id="escucha-activa">
+					<h3>Escucha Activa</h3>
+					<p>
+						La escucha activa es fundamental para entender las necesidades del cliente y establecer una conexión más
+						profunda.
+					</p>
+				</section>
+				<section id="relaciones">
+					<h3>Construcción de Relaciones</h3>
+					<p>
+						Establecer relaciones sólidas con los clientes puede aumentar la lealtad y las oportunidades de ventas
+						futuras.
+					</p>
+				</section>
+				<section id="presentaciones">
+					<h3>Presentaciones Efectivas</h3>
+					<p>
+						Aprende a crear presentaciones que capten la atención de tu audiencia y comuniquen tu mensaje de manera
+						clara.
+					</p>
+				</section>
+				<section id="negociacion">
+					<h3>Negociación y Cierre</h3>
+					<p>
+						Las habilidades de negociación son cruciales para cerrar ventas y lograr acuerdos mutuamente beneficiosos.
+					</p>
+				</section>
+			</div>
 		</main>
 
 		<footer>
-			<nav>
-				<a href="index.html" id="back-button"> <i class="fa fa-arrow-left"></i> Regresar al Índice </a>
-			</nav>
-			<p>© 2024 Ventas Corporativas</p>
+			<button id="back-button">Volver al Índice</button>
+			<p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
 		</footer>
+
+		<script src="./app.js"></script>
 	</body>
 </html>

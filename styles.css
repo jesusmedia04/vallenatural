@@ -3,19 +3,26 @@ body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
 	padding: 0;
-	background-image: url(./assets/background\ 2.jpg); /* Fondo de la pantalla de bienvenida */
-	background-size: cover;
-	background-position: center;
-	min-height: 100vh; /* Usamos min-height en lugar de height */
+	background: linear-gradient(to bottom right, rgba(220, 230, 240, 0.8), rgba(150, 200, 250, 0.9));
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	overflow-x: hidden; /* Solo oculta el scroll horizontal */
-	overflow-y: auto; /* Asegura que el contenido puede desplazarse verticalmente */
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
-/* Splash Screen (Pantalla de Bienvenida) */
+header {
+	text-align: center;
+	padding: 20px;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+}
+
 #splash-screen {
 	position: fixed;
 	top: 0;
@@ -59,125 +66,115 @@ body {
 	transform: scale(1.05);
 }
 
-/* Estilos para el Índice */
-header {
-	text-align: center;
-	margin-bottom: 20px;
-	padding: 20px;
-	background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-	border-radius: 12px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra elegante */
-	max-width: 90%;
-	color: #fff;
-}
-
-header h1 {
-	font-size: 2.5rem;
-	font-weight: 600;
-}
-
-header p {
-	font-size: 1.2rem;
-	margin-top: 10px;
-	color: #d1d1d1;
-}
-
 main {
-	width: 100%;
-	max-width: 1200px;
-	padding: 20px;
-	margin: 0 auto;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
+	padding: 10px;
+	min-height: 100vh;
+}
+
+.main-background {
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	width: 90%;
+	max-width: 1200px;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.main-background.show {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .button-options {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño responsivo */
-	gap: 1.5em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .app-section {
-	text-decoration: none;
-	border-radius: 15px;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	margin: 10px;
 	padding: 20px;
 	text-align: center;
-	color: #fff;
-	transition: transform 0.2s, box-shadow 0.3s ease;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(47, 68, 106, 0.9));
-	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	flex: 1 1 300px;
+	transition: transform 0.3s;
 }
 
 .app-section:hover {
 	transform: scale(1.05);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-.app-section i {
-	font-size: 40px;
-	margin-bottom: 15px;
 }
 
 .app-section h2 {
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 
-.app-section p {
-	font-size: 1rem;
-	margin-bottom: 15px;
-	color: #d1d1d1; /* Color sutil para el texto */
-}
-
-footer {
+.content {
 	text-align: center;
-	margin-top: 40px;
-	padding: 15px;
-	background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para footer */
-	box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
 }
 
-footer p {
-	color: #d1d1d1;
-	font-size: 0.9rem;
+.content ul {
+	list-style: none;
+	padding: 0;
+}
+
+.content li {
+	background: rgba(255, 255, 255, 0.9);
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section-index {
+	margin: 1em 0;
+}
+
+.section-index li {
+	margin: 5px 0;
+}
+
+.section-index a {
+	text-decoration: none;
+	color: #1e90ff;
+}
+
+.section-index a:hover {
+	text-decoration: underline;
+}
+
+button {
+	background: #1e90ff;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+button:hover {
+	background: #1c7cd8;
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
-	header h1 {
-		font-size: 2rem;
-	}
-
-	header p {
-		font-size: 1rem;
-	}
-
-	.app-section i {
-		font-size: 35px;
-	}
-
-	.app-section h2 {
-		font-size: 1.3rem;
-	}
-
-	.app-section p {
-		font-size: 0.9rem;
-	}
-}
-
 @media (max-width: 600px) {
-	.button-options {
-		grid-template-columns: repeat(2, 1fr);
+	#start-button {
+		font-size: 1.5rem;
+		padding: 10px 20px;
 	}
 
 	.app-section {
-		padding: 15px;
+		font-size: 0.9rem;
+	}
+
+	.content h2 {
+		font-size: 1.5rem;
 	}
 }
